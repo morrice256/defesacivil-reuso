@@ -17,4 +17,29 @@ public class ProcessoLocalizacao {
 	  
 	  @Column
 	  String localizacao;
+
+	public ProcessoLocalizacao() {
+	}
+	  
+	public ProcessoLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getLocalizacao() {
+		return localizacao;
+	}
+
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
+	}
+	  
+	  
 }

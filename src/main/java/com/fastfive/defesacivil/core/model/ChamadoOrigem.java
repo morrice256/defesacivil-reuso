@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import lombok.Data;
 
 @Entity
-@Data
 public class ChamadoOrigem {
 
 	  @Id 
@@ -17,5 +16,29 @@ public class ChamadoOrigem {
 	  
 	  @Column
 	  String origem;
+
+	public ChamadoOrigem() {
+	}
+	  
+	public ChamadoOrigem(String origem) {
+		this.origem = origem;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getOrigem() {
+		return origem;
+	}
+
+	public void setOrigem(String origem) {
+		this.origem = origem;
+	}
+
 	  
 }
