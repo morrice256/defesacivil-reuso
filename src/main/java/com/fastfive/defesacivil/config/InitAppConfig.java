@@ -8,9 +8,11 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import com.fastfive.defesacivil.core.model.Bairro;
 import com.fastfive.defesacivil.core.model.ChamadoOrigem;
 import com.fastfive.defesacivil.core.model.ProcessoLocalizacao;
 import com.fastfive.defesacivil.core.model.ProcessoStatus;
+import com.fastfive.defesacivil.core.repository.BairroRepository;
 import com.fastfive.defesacivil.core.repository.ChamadoOrigemRepository;
 import com.fastfive.defesacivil.core.repository.ProcessoLocalizacaoRepository;
 import com.fastfive.defesacivil.core.repository.ProcessoStatusRepository;
@@ -27,11 +29,15 @@ public class InitAppConfig {
 	@Autowired
 	private ChamadoOrigemRepository chamadoOrigemRepository;
 	
+	@Autowired
+	private BairroRepository bairroRepository;
+		
 	@EventListener(ContextRefreshedEvent.class)
 	public void initDB() {
 		initProcessoStatus();
 		initProcessLocalizacao();
 		initChamadoOrigem();
+		initBairro();
 	}
 	
 	private void initProcessoStatus() {
@@ -80,6 +86,22 @@ public class InitAppConfig {
 		list.add(ORIGEM3);
 		
 		chamadoOrigemRepository.saveAll(list);
+	}
+	
+	private void initBairro() {
+		List<Bairro> list = new ArrayList<>();
+		Bairro aflitos = new Bairro("Aflitos");
+		Bairro afogados = new Bairro("Afogados");
+		Bairro Ipsep = new Bairro("Ipsep");
+		Bairro boaviagem = new Bairro("Boa Viagem");
+		
+		list.add(aflitos);
+		list.add(afogados);
+		list.add(Ipsep);
+		list.add(boaviagem);
+		
+		bairroRepository.saveAll(list);
+		
 	}
 	
 }

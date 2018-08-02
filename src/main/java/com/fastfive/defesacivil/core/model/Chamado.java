@@ -1,9 +1,13 @@
 package com.fastfive.defesacivil.core.model;
 
+import java.sql.Timestamp;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -13,7 +17,15 @@ public class Chamado {
 	  @GeneratedValue 
 	  Long id;
 	  
+	  @NotNull
 	  Long processo;
+	  
+	  @NotNull
+	  Timestamp dataChamado;
+	  
+	  @OneToOne(cascade=CascadeType.PERSIST)
+	  @NotNull
+	  Endereco endereco;
 	  
 	  @ManyToOne
 	  @NotNull
@@ -65,5 +77,22 @@ public class Chamado {
 	
 		public void setProcessoLocalizacao(ProcessoLocalizacao processoLocalizacao) {
 			this.processoLocalizacao = processoLocalizacao;
-		}	  
+		}
+
+		public Timestamp getDataChamado() {
+			return dataChamado;
+		}
+
+		public void setDataChamado(Timestamp dataChamado) {
+			this.dataChamado = dataChamado;
+		}
+
+		public Endereco getEndereco() {
+			return endereco;
+		}
+
+		public void setEndereco(Endereco endereco) {
+			this.endereco = endereco;
+		}
+		
 }

@@ -7,4 +7,6 @@ import com.fastfive.defesacivil.core.model.Chamado;
 
 public interface ChamadoRepository extends CrudRepository<Chamado, Long>{
 
+	Chamado findByProcesso(Long numeroPrcesso);
+
 }
