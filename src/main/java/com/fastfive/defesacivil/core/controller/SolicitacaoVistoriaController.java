@@ -16,7 +16,6 @@ import com.fastfive.defesacivil.core.model.SolicitacaoVistoria;
 @RequestMapping("solicitacaovistoria")
 public class SolicitacaoVistoriaController {
 
-
 	@Autowired
 	private ISolicitacaoVistoriaBusiness solicitacaoVistoriaBusiness;
 	
