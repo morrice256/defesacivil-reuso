@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fastfive.defesacivil.core.business.IChamadoBusiness;
 import com.fastfive.defesacivil.core.model.Chamado;
 
-@RestController("/chamado")
+@RestController
+@RequestMapping("chamado")
 public class ChamadoController {
 
 	@Autowired

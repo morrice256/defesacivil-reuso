@@ -22,6 +22,7 @@ public class ChamadoBusiness implements IChamadoBusiness {
 
 	@Override
 	public Chamado save(Chamado chamado) {
+		chamado.setProcessoStatus(null);
 		return chamadoRepository.save(chamado);
 	}
 
