@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -28,6 +29,9 @@ public class Endereco {
 	  @ManyToOne
 	  @NotNull
 	  Bairro bairro;
+	  
+	  @Transient
+	  Double raio;
 
 
 	public Long getId() {
@@ -78,6 +82,12 @@ public class Endereco {
 		this.localidade = localidade;
 	}
 
-	  
-	  
+	public Double getRaio() {
+		return raio;
+	}
+
+	public void setRaio(Double raio) {
+		this.raio = raio;
+	}
+
 }
