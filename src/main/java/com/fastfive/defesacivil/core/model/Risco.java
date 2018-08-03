@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 import lombok.Data;
 
 @Entity
-@Data
 public class Risco {
 
 	  @Id 
@@ -16,6 +16,13 @@ public class Risco {
 
 	  @Column
 	  String risco;
+
+	public Risco() {
+	}
+	  
+	public Risco(String risco) {
+		this.risco = risco;
+	}
 
 	public Long getId() {
 		return id;

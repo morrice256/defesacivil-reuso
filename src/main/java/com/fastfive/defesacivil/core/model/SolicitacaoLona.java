@@ -9,9 +9,6 @@ import javax.validation.constraints.NotNull;
 public class SolicitacaoLona extends Solicitacao{
 
 	  @NotNull
-	  String descricao;
-	  
-	  @NotNull
 	  Boolean colocada;	  
 	  
 	  @NotNull
@@ -22,14 +19,6 @@ public class SolicitacaoLona extends Solicitacao{
 	  
 	  @NotNull
 	  Integer quantidade;
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
 
 	public Boolean getColocada() {
 		return colocada;

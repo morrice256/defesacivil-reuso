@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@DiscriminatorValue(value = "1")
+@DiscriminatorValue(value = "2")
 public class SolicitacaoVistoria  extends Solicitacao {
 
 	  @ManyToOne

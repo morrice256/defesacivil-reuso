@@ -8,18 +8,22 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import com.fastfive.defesacivil.core.model.Avaliador;
 import com.fastfive.defesacivil.core.model.Bairro;
 import com.fastfive.defesacivil.core.model.ChamadoOrigem;
 import com.fastfive.defesacivil.core.model.ProcessoLocalizacao;
 import com.fastfive.defesacivil.core.model.ProcessoStatus;
 import com.fastfive.defesacivil.core.model.RPA;
 import com.fastfive.defesacivil.core.model.Regional;
+import com.fastfive.defesacivil.core.model.Risco;
+import com.fastfive.defesacivil.core.repository.AvaliadorRepository;
 import com.fastfive.defesacivil.core.repository.BairroRepository;
 import com.fastfive.defesacivil.core.repository.ChamadoOrigemRepository;
 import com.fastfive.defesacivil.core.repository.ProcessoLocalizacaoRepository;
 import com.fastfive.defesacivil.core.repository.ProcessoStatusRepository;
 import com.fastfive.defesacivil.core.repository.RPARepository;
 import com.fastfive.defesacivil.core.repository.RegionalRepository;
+import com.fastfive.defesacivil.core.repository.RiscoRepository;
 
 @Component
 public class InitAppConfig {
@@ -41,6 +45,12 @@ public class InitAppConfig {
 	
 	@Autowired
 	private RPARepository rpaRepository;
+	
+	@Autowired
+	private RiscoRepository riscoRepository;
+	
+	@Autowired
+	private AvaliadorRepository avaliadorRepository;
 		
 	@EventListener(ContextRefreshedEvent.class)
 	public void initDB() {
@@ -50,6 +60,8 @@ public class InitAppConfig {
 		initBairro();
 		initRegional();
 		initRPA();
+		initRisco();
+		initAvaliador();
 	}
 	
 	private void initProcessoStatus() {
@@ -149,6 +161,32 @@ public class InitAppConfig {
 		list.add(SUL);
 		
 		rpaRepository.saveAll(list);
+	}
+	
+	private void initRisco() {
+		List<Risco> list = new ArrayList<>();
+		Risco r2 = new Risco("R2 Médio");
+		Risco r3 = new Risco("R3 Alto");
+		Risco r4 = new Risco("R4 Muito Alto");
+
+		list.add(r2);
+		list.add(r3);
+		list.add(r3);
+		
+		riscoRepository.saveAll(list);
+	}
+	
+	private void initAvaliador() {
+		List<Avaliador> list = new ArrayList<>();
+		Avaliador dudu = new Avaliador("Francisco Eduardo");
+		Avaliador fefe = new Avaliador("Ferdiand de Paula");
+		Avaliador reutman = new Avaliador("Reutman Santos");
+		
+		list.add(dudu);
+		list.add(fefe);
+		list.add(reutman);
+		
+		avaliadorRepository.saveAll(list);
 	}
 	
 }

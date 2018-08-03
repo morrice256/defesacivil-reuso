@@ -25,7 +25,6 @@ public class Solicitacao {
 	  @NotNull
 	  private Chamado chamado;
 	
-	  @NotNull
 	  private Timestamp dataSolicitacao;
 	  
 	  @NotNull
