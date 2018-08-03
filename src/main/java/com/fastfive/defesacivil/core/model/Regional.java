@@ -1,35 +1,32 @@
 package com.fastfive.defesacivil.core.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import lombok.Data;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Data
-public class ProcessoStatus {
+public class Regional {
 
-	  @Id 
-	  @GeneratedValue 
-	  Integer id;
-	  
-	  @Column
-	  String descricao;
+	@Id 
+	@GeneratedValue 
+	Long id;
+	
+	@NotNull
+	private String descricao;
 
-	public ProcessoStatus() {
-	} 
-	  
-	public ProcessoStatus(String descricao) {
+	public Regional() {
+	}
+	
+	public Regional(String descricao) {
 		this.descricao = descricao;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -41,5 +38,4 @@ public class ProcessoStatus {
 		this.descricao = descricao;
 	}
 	
-	  
 }

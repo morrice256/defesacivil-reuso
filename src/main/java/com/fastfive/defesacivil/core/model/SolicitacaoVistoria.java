@@ -1,21 +1,14 @@
 package com.fastfive.defesacivil.core.model;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-import lombok.Data;
-
 @Entity
-@Data
-public class SolicitacaoVistoria {
+@DiscriminatorValue(value = "1")
+public class SolicitacaoVistoria  extends Solicitacao {
 
-	  @Id 
-	  @GeneratedValue 
-	  Long id;
-	
 	  @ManyToOne
 	  @NotNull
 	  Risco risco;
@@ -23,14 +16,6 @@ public class SolicitacaoVistoria {
 	  @ManyToOne
 	  @NotNull
 	  Avaliador avaliador;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Risco getRisco() {
 		return risco;
