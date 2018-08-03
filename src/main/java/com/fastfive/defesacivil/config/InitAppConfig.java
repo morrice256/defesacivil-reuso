@@ -8,14 +8,22 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import com.fastfive.defesacivil.core.model.Avaliador;
 import com.fastfive.defesacivil.core.model.Bairro;
 import com.fastfive.defesacivil.core.model.ChamadoOrigem;
 import com.fastfive.defesacivil.core.model.ProcessoLocalizacao;
 import com.fastfive.defesacivil.core.model.ProcessoStatus;
+import com.fastfive.defesacivil.core.model.RPA;
+import com.fastfive.defesacivil.core.model.Regional;
+import com.fastfive.defesacivil.core.model.Risco;
+import com.fastfive.defesacivil.core.repository.AvaliadorRepository;
 import com.fastfive.defesacivil.core.repository.BairroRepository;
 import com.fastfive.defesacivil.core.repository.ChamadoOrigemRepository;
 import com.fastfive.defesacivil.core.repository.ProcessoLocalizacaoRepository;
 import com.fastfive.defesacivil.core.repository.ProcessoStatusRepository;
+import com.fastfive.defesacivil.core.repository.RPARepository;
+import com.fastfive.defesacivil.core.repository.RegionalRepository;
+import com.fastfive.defesacivil.core.repository.RiscoRepository;
 
 @Component
 public class InitAppConfig {
@@ -30,7 +38,19 @@ public class InitAppConfig {
 	private ChamadoOrigemRepository chamadoOrigemRepository;
 	
 	@Autowired
+	private RegionalRepository regionalRepository;
+	
+	@Autowired
 	private BairroRepository bairroRepository;
+	
+	@Autowired
+	private RPARepository rpaRepository;
+	
+	@Autowired
+	private RiscoRepository riscoRepository;
+	
+	@Autowired
+	private AvaliadorRepository avaliadorRepository;
 		
 	@EventListener(ContextRefreshedEvent.class)
 	public void initDB() {
@@ -38,6 +58,10 @@ public class InitAppConfig {
 		initProcessLocalizacao();
 		initChamadoOrigem();
 		initBairro();
+		initRegional();
+		initRPA();
+		initRisco();
+		initAvaliador();
 	}
 	
 	private void initProcessoStatus() {
@@ -100,8 +124,69 @@ public class InitAppConfig {
 		list.add(Ipsep);
 		list.add(boaviagem);
 		
-		bairroRepository.saveAll(list);
+		bairroRepository.saveAll(list);		
+	}
+	
+	private void initRegional() {
+		List<Regional> list = new ArrayList<>();
+		Regional planice = new Regional("PLANICIE");
+		Regional gart = new Regional("GART");
+		Regional norte = new Regional("NORTE");
+		Regional nortedeste = new Regional("NOROESTE");
+		Regional SUL = new Regional("SUL");
+		Regional OESTE = new Regional("OESTE");
 		
+		list.add(planice);
+		list.add(gart);
+		list.add(norte);
+		list.add(nortedeste);
+		list.add(SUL);
+		list.add(OESTE);
+		
+		regionalRepository.saveAll(list);
+	}
+	
+	private void initRPA() {
+		List<RPA> list = new ArrayList<>();
+		RPA centro = new RPA(1, "CENTRO");
+		RPA nordeste = new RPA(3, "NOROESTE");
+		RPA sudoeste = new RPA(5, "SUDOESTE");
+		RPA norte = new RPA(2, "NORTE");
+		RPA SUL = new RPA(6, "SUL");
+		
+		list.add(centro);
+		list.add(nordeste);
+		list.add(sudoeste);
+		list.add(norte);
+		list.add(SUL);
+		
+		rpaRepository.saveAll(list);
+	}
+	
+	private void initRisco() {
+		List<Risco> list = new ArrayList<>();
+		Risco r2 = new Risco("R2 Médio");
+		Risco r3 = new Risco("R3 Alto");
+		Risco r4 = new Risco("R4 Muito Alto");
+
+		list.add(r2);
+		list.add(r3);
+		list.add(r3);
+		
+		riscoRepository.saveAll(list);
+	}
+	
+	private void initAvaliador() {
+		List<Avaliador> list = new ArrayList<>();
+		Avaliador dudu = new Avaliador("Francisco Eduardo");
+		Avaliador fefe = new Avaliador("Ferdiand de Paula");
+		Avaliador reutman = new Avaliador("Reutman Santos");
+		
+		list.add(dudu);
+		list.add(fefe);
+		list.add(reutman);
+		
+		avaliadorRepository.saveAll(list);
 	}
 	
 }

@@ -1,23 +1,13 @@
 package com.fastfive.defesacivil.core.model;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import lombok.Data;
-
 @Entity
-@Data
-public class SolicitacaoLona {
+@DiscriminatorValue(value = "1")
+public class SolicitacaoLona extends Solicitacao{
 
-	  @Id 
-	  @GeneratedValue 
-	  Long id;
-	  
-	  @NotNull
-	  String descricao;
-	  
 	  @NotNull
 	  Boolean colocada;	  
 	  
@@ -29,22 +19,6 @@ public class SolicitacaoLona {
 	  
 	  @NotNull
 	  Integer quantidade;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
 
 	public Boolean getColocada() {
 		return colocada;

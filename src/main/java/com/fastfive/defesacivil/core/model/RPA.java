@@ -6,20 +6,25 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Bairro {
+public class RPA {
 	
 	  @Id 
 	  @GeneratedValue 
 	  Long id;
 	  
 	  @NotNull
-	  String bairro;
-	 
-	public Bairro() {
-	}
+	  Integer cod;
 	  
-	public Bairro(String bairro) {
-		this.bairro = bairro;
+	  @NotNull
+	  String nome;
+	 
+	  
+	public RPA() {
+	}
+
+	public RPA(Integer cod, String nome) {
+		this.cod = cod;
+		this.nome = nome;
 	}
 
 	public Long getId() {
@@ -30,14 +35,20 @@ public class Bairro {
 		this.id = id;
 	}
 
-	public String getBairro() {
-		return bairro;
+	public Integer getCod() {
+		return cod;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setCod(Integer cod) {
+		this.cod = cod;
 	}
 
-	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	
 }

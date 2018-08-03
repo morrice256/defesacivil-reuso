@@ -5,10 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import lombok.Data;
-
 @Entity
-@Data
+
 public class Avaliador {
 
 	  @Id 
@@ -17,6 +15,13 @@ public class Avaliador {
 
 	  @Column
 	  String avaliador;
+	  
+	public Avaliador() {
+	}
+	  
+	public Avaliador(String avaliador) {
+		this.avaliador = avaliador;
+	}
 
 	public Long getId() {
 		return id;
