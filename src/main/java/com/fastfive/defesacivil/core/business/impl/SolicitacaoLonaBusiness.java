@@ -2,6 +2,7 @@ package com.fastfive.defesacivil.core.business.impl;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,10 @@ public class SolicitacaoLonaBusiness implements ISolicitacaoLonaBusiness{
 	public SolicitacaoLona save(SolicitacaoLona solicitacaoLona) {
 		solicitacaoLona.setDataSolicitacao( new Timestamp(System.currentTimeMillis()) );
 		return solicitacaoLonaRepository.save(solicitacaoLona);
+	}
+
+	@Override
+	public Optional<SolicitacaoLona> findById(Long id) {
+		return solicitacaoLonaRepository.findById(id);
 	}
 }
