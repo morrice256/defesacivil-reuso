@@ -28,3 +28,6 @@ O projeto foi desenvolvido a partir de artefatos fornecidos pelo professor Vanil
 [Diagrama de Entidades](src/main/resources/static/documents/Diagramaentidades.pdf)
 [Diagrama de Componentes](src/main/resources/static/documents/Diagramasreuso.pdf)
 [Apresentação](src/main/resources/static/documents/Apresentacaoreuso.pptx)
+
+[End points de comunicação (JSON - POSTMAN)](src/main/resources/static/postman/DefesaCivil.postman_collection.json)
+[Enviroments (JSON - POSTMAN)](src/main/resources/static/postman/DefesaCivil.environment.json)
