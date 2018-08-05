@@ -25,4 +25,4 @@ Linux: No terminal execute o comando:  ``` mvn spring-boot:run ```
 O projeto foi desenvolvido a partir de artefatos fornecidos pelo professor Vanilson Burégio a título de aplicar as técnicas de engenharia reversa.
 
 ### Artefatos
-![Diagrama de Entidades](https://github.com/morrice256/defesacivil-reuso/src/main/resources/static/documents/Diagramaentidades.pdf)
+![Diagrama de Entidades](src/main/resources/static/documents/Diagramaentidades.pdf)
