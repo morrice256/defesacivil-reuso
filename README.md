@@ -26,5 +26,5 @@ O projeto foi desenvolvido a partir de artefatos fornecidos pelo professor Vanil
 
 ### Artefatos
 [Diagrama de Entidades](src/main/resources/static/documents/Diagramaentidades.pdf)
-[Diagrama de Componentes](src/main/resources/static/documents/Diagramas\ Reuso.pdf)
-[Apresentação](src/main/resources/static/documents/Apresentação\ -\ Reuso.pptx)
+[Diagrama de Componentes](src/main/resources/static/documents/Diagramasreuso.pdf)
+[Apresentação](src/main/resources/static/documents/Apresentaçãoreuso.pptx)
