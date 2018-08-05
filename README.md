@@ -1,8 +1,28 @@
 # Trabalho de Reuso - MPES-2017.2
-A basic pet store written with the [Spring Boot framework](https://projects.spring.io/spring-boot/). The `LambdaHandler` object is the main entry point for Lambda.
 
-The application can be deployed in an AWS account using the [Serverless Application Model](https://github.com/awslabs/serverless-application-model). The `sam.yaml` file in the root folder contains the application definition
+## Equipe
+* Mauricio Wanderley Martins
+* Jeane Karla
+* Reutman 
+* João Paulo
+* Francisco Eduardo
+* Ferdinand de Paula
+> contato: mauriciowanderleymartins@gmail.com
 
-## Installation
-To build and install the sample application you will need [Maven](https://maven.apache.org/).
+### Professor
+* Vanilson Burégio – vanilson@gmail.com
+
+### Mestrado Profissional em Engenharia de Software
+
+### Configurações
+* Porta de Acesso: 8585
+* Acesso h2: http://localhost:8585/h2
+
+### Executar o projeto
+Linux: No terminal execute o comando:  ``` mvn spring-boot:run ```
+
+### Sobre
+O projeto foi desenvolvido a partir de artefatos fornecidos pelo professor Vanilson Burégio a título de aplicar as técnicas de engenharia reversa.
+
+### Artefatos
 
